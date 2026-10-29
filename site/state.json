@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T11:54",
+  "generatedAt": "2026-10-29T22:19",
   "workspace": "~/dev",
   "folders": [
     {
@@ -16,9 +16,10 @@
         "die-wand",
         "four-wins",
         "startup-layout",
+        "mycents",
         "filmchen"
       ],
-      "count": 8
+      "count": 9
     },
     {
       "name": "mcps",
@@ -64,9 +65,10 @@
       "detailed": false,
       "entries": [
         "die-wand-tiles.json",
+        "filmchen-stimmen.json",
         "startup-layout.json"
       ],
-      "count": 2
+      "count": 3
     },
     {
       "name": "bootstrap",
@@ -239,6 +241,21 @@
       ],
       "deviations": 0,
       "lastCommit": "2026-10-27",
+      "localOnly": false,
+      "restored": true
+    },
+    {
+      "name": "mycents",
+      "description": "A local-first personal finance ledger for accounts, neutral transfers, recurring routines and yearly comparison.",
+      "remote": true,
+      "appVersion": "0.2.0",
+      "standard": "1.1.1",
+      "profiles": [
+        "web-server",
+        "quality-typescript"
+      ],
+      "deviations": 2,
+      "lastCommit": "2026-10-29",
       "localOnly": false,
       "restored": true
     },
