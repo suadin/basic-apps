@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workspace state — basic-apps</title>
+  <meta name="description" content="What exists in this workspace, what each folder is for, and where the projects stand.">
+  <meta name="theme-color" content="#201f25" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f5f0e5" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="tokens.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="brand">
+      <img class="logo" src="tokens.svg" alt="">
+      <h1>basic-apps</h1>
+      <p class="tagline">The state of this workspace.</p>
+    </div>
+    <div class="actions">
+      <button id="mode-a" class="button mode" type="button" data-mode="a">All</button>
+      <button id="mode-b" class="button mode" type="button" data-mode="b">Publishable</button>
+      <button id="theme" class="button" type="button" data-tip="Follow the OS colour scheme">OS theme</button>
+      <button id="zoom" class="button" type="button" data-tip="Show the 80–200 % zoom rule">Zoom</button>
+    </div>
+  </header>
+
+  <main class="main" id="main">
+    <section id="home">
+      <p class="eyebrow">Workspace state</p>
+      <h2>What exists, as of <time id="generated-at">—</time></h2>
+      <p class="lede">The folder tree of this workspace, what each folder is for, and where the
+        projects stand. The page shows the inventory, never the content: no addresses, no
+        paths inside the closed folders, no tokens.</p>
+
+      <div id="folder-cards" class="cards"></div>
+
+      <section class="states">
+        <h2>Projects</h2>
+        <p class="lede">Each project under <code>repos/</code> has its own history and its own
+          remote. Restore clones the ones in <code>bootstrap/repos.txt</code>; a project
+          without a remote exists only on this machine.</p>
+        <p id="repos-empty" class="state-label" hidden>No projects found.</p>
+        <table id="repo-table" class="table">
+          <thead>
+            <tr>
+              <th scope="col">Project</th>
+              <th scope="col">App</th>
+              <th scope="col">Standard</th>
+              <th scope="col">Deviations</th>
+              <th scope="col">Last commit</th>
+              <th scope="col">Origin</th>
+              <th scope="col">Restore</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section class="states">
+        <h2>Drift</h2>
+        <p id="drift" class="lede">—</p>
+        <ul id="drift-list" class="drift"></ul>
+      </section>
+
+      <section class="states">
+        <h2>How this page stays true</h2>
+        <p>Two directions, and only one of them can be true:</p>
+        <p><code>python3 tools/scan.py</code> reads this machine and writes
+          <code>site/state.json</code>. It refuses to write if the document would contain an
+          address, a volume path, a key or a token, and it fails when a folder or a
+          repository has no description.</p>
+        <p><code>python3 tools/scan.py --check</code> validates the committed file without a
+          workspace. CI can only run this one: it proves the shape and the absence of
+          sensitive text, not that the contents are current.</p>
+        <p><a href="#/docs/readme">Open the README reader</a></p>
+      </section>
+    </section>
+
+    <section id="reader" hidden aria-label="Documentation">
+      <div class="reader-head">
+        <div>
+          <p class="eyebrow">Documentation</p>
+          <h2 id="reader-title">README</h2>
+        </div>
+        <button id="reader-close" class="button" type="button">Back to the state</button>
+      </div>
+      <div id="reader-tabs" class="reader-tabs" role="tablist" aria-label="Documents"></div>
+      <nav id="reader-sections" class="reader-sections" aria-label="Sections"></nav>
+      <h3 id="reader-section-title" class="reader-section-title"></h3>
+      <article id="reader-body" class="reader-body"></article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-items">
+      <button id="readme" class="footer-item" type="button" data-tip="Read the documentation">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H19v20H7.5A2.5 2.5 0 0 1 5 19.5v-15Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 7.5h6M9 11.5h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span>README</span>
+      </button>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <button id="specs" class="footer-item" type="button" data-tip="Open SPECS">
+        <img class="footer-logo" src="tokens.svg" alt="">
+        <span id="app-version">—</span>
+      </button>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <button id="basic-specs" class="footer-item" type="button" data-tip="Open BASIC SPECS">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="m12 3 8 4-8 4-8-4 8-4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m4 11 8 4 8-4M4 15l8 4 8-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="basic-version">—</span>
+      </button>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <span class="footer-item">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path d="m9 7.5-4.5 4.5L9 16.5M15 7.5l4.5 4.5L15 16.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>source: <a href="https://github.com/suadin/basic-apps" target="_blank" rel="noopener noreferrer">suadin/basic-apps</a></span>
+      </span>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <span id="unit-metrics" class="footer-item" data-tip="not executed" data-tip-wide>
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 4V3h6v1M8.5 13l2.5 2.5L15.5 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span id="unit-label">Unit not executed</span>
+      </span>
+      <span class="footer-sep" aria-hidden="true">|</span>
+      <span id="e2e-metrics" class="footer-item" data-tip="not executed" data-tip-wide>
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 9h18" fill="none" stroke="currentColor" stroke-width="2"/><path d="m10 12 5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+        <span id="e2e-label">E2E not executed</span>
+      </span>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

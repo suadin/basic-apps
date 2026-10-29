@@ -1,0 +1,25 @@
+{
+  "name": "basic-apps",
+  "standard": "1.1.1",
+  "profiles": [
+    "web-static"
+  ],
+  "docs": "docs/BASIC-SPECS.md",
+  "appSpecs": "docs/APP-SPECS.md",
+  "metrics": "site/test-metrics.json",
+  "deviations": [
+    {
+      "rule": "BASIC-DATA-01",
+      "reason": "The page publishes the folder inventory of this machine on purpose: folder and project names are real, not sample data. A scanner in tools/scan.py refuses to write the document if it would contain an address, a volume path, a key or a token, and secrets/ and backups/ appear only as existence, without even their file names.",
+      "review": "2027-01-29"
+    }
+  ],
+  "commands": {
+    "unit": "pnpm test",
+    "e2e": "pnpm test:e2e",
+    "metrics": "pnpm metrics",
+    "docs": "pnpm publish-site && pnpm check:docs"
+  },
+  "appVersion": "0.1.0",
+  "runtime": "site/basic-specs.json"
+}

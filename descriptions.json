@@ -1,0 +1,79 @@
+{
+  "rootFiles": ["AGENTS.md", "contract.md", "opencode.json"],
+  "files": {
+    "AGENTS.md": "The rules of this workspace: structure, boundaries, the standard.",
+    "contract.md": "The pointer to the public standard and the local exceptions.",
+    "opencode.json": "MCP servers, skills path, permissions and the model policy. No secrets."
+  },
+  "folders": {
+    "repos": {
+      "role": "projects with their own history",
+      "text": "Projects with their own git history and their own remote. They are cloned by bootstrap/restore.sh and are not part of the workspace repository.",
+      "public": true,
+      "detailed": true,
+      "listing": "repos"
+    },
+    "mcps": {
+      "role": "runtime and rules of the MCP servers",
+      "text": "The servers that reach Paperless, Home Assistant and the two hosts over SSH, plus diary and GitHub. Only what belongs to this machine is here; the code lives in its project.",
+      "public": false,
+      "listing": "dirs"
+    },
+    "skills": {
+      "role": "capabilities opencode loads while working",
+      "text": "Knowledge about a tool or a procedure, loaded on demand. The folder is not published as it is: several skills name this machine's services.",
+      "public": false,
+      "listing": "dirs"
+    },
+    "configs": {
+      "role": "this machine's rules for tools from repos/",
+      "text": "The concrete window layout, the real tile list. Not public: it is this machine's configuration, not the tool's capability.",
+      "public": false,
+      "listing": "files"
+    },
+    "bootstrap": {
+      "role": "how this machine is rebuilt from GitHub",
+      "text": "restore.sh clones the projects, repos.txt is the only list of their names. Published.",
+      "public": true,
+      "listing": "files"
+    },
+    "models": {
+      "role": "local model files",
+      "text": "GGUF files for the local llama.cpp server. Not versioned, not published, and no agent names them any more.",
+      "public": false,
+      "listing": "files"
+    },
+    "secrets": {
+      "role": "one file per token",
+      "text": "Closed to the agent by configuration. Only its existence is named here, never its content — not even the file names.",
+      "public": false,
+      "listing": "none"
+    },
+    "backups": {
+      "role": "local backups",
+      "text": "Closed to the agent by configuration. Existence only, for the same reason as secrets/.",
+      "public": false,
+      "listing": "none"
+    },
+    "scratch": {
+      "role": "throwaway",
+      "text": "What lies here is deleted, not maintained. The folder may be absent.",
+      "public": false,
+      "optional": true,
+      "listing": "files"
+    }
+  },
+  "repos": {
+    "basic-apps": "This page: the public state of the workspace, generated from the folder tree.",
+    "basic-specs": "The versioned standard: rules, profiles, checker, specimen and the public registry.",
+    "app-template": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
+    "diary": "Dated entries in SQLite, readable and searchable in the browser; an AI may only append.",
+    "die-wand": "A wall of bookmark tiles, static, no account, no cloud.",
+    "filmchen": {
+      "text": "Turns a folder of numbered pictures, clips, narration and pauses into one MP4.",
+      "localOnly": true
+    },
+    "four-wins": "Connect Four in Angular, live on GitHub Pages.",
+    "startup-layout": "A GNOME Shell extension that builds the window layout at login."
+  }
+}

@@ -1,0 +1,5 @@
+node_modules/
+test-results/
+e2e-results.json
+dist/
+__pycache__/
