@@ -3,7 +3,7 @@
     "tests": 15,
     "failures": 0,
     "coverage": 80.53,
-    "measuredAt": "2026-10-29T11:53",
+    "measuredAt": "2026-10-29T11:57",
     "durationSeconds": 0.065,
     "perTest": 0.0044
   },
@@ -13,8 +13,8 @@
     "coverage": 56.53,
     "coveredLines": 342,
     "totalLines": 605,
-    "measuredAt": "2026-10-29T11:53",
-    "durationSeconds": 3.277,
-    "perTest": 0.1725
+    "measuredAt": "2026-10-29T11:57",
+    "durationSeconds": 3.258,
+    "perTest": 0.1715
   }
 }
