@@ -1,6 +1,6 @@
 {
   "name": "basic-apps",
-  "standard": "1.2.0",
+  "standard": "1.2.1",
   "profiles": [
     "web-static"
   ],
