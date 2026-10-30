@@ -1,4 +1,15 @@
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
 import { expect, test } from './fixtures.js';
+
+// The standard moves; the suite must not. The versions come from the app's own runtime
+// metadata, and the "newer" case is derived from that major.
+const RUNTIME = JSON.parse(readFileSync(join(process.cwd(), 'site/basic-specs.json'), 'utf8'));
+const STANDARD = RUNTIME.standard;
+const [MAJOR, MINOR] = STANDARD.split('.').map(Number);
+const NEXT_MINOR = `${MAJOR}.${MINOR + 1}.0`;
+const NEXT_MAJOR = `${MAJOR + 1}.0.0`;
+
 
 const METRICS = {
   unit: {
@@ -71,7 +82,7 @@ const STATE = {
   sensitive: 'clean',
 };
 
-async function open(page, latest = '1.1.1') {
+async function open(page, latest = STANDARD) {
   await page.route('**/test-metrics.json', (route) => route.fulfill({ json: METRICS }));
   await page.route('**/state.json', (route) => route.fulfill({ json: STATE }));
   if (latest === null) {
@@ -222,19 +233,21 @@ test('[BASIC-VERSION-01] the app version opens SPECS and stays neutral', async (
 
 test('[BASIC-VERSION-02] the Basic Specs version opens BASIC SPECS', async ({ page }) => {
   await open(page);
-  await expect(page.locator('#basic-version')).toHaveText('1.1.1');
+  await expect(page.locator('#basic-version')).toHaveText(STANDARD);
   await page.locator('#basic-specs').click();
   await expect(page).toHaveURL(/#\/docs\/basic-specs$/);
   await expect(page.locator('#reader-title')).toHaveText('BASIC SPECS');
 });
 
 test('[BASIC-VERSION-03] only a major update turns red', async ({ page }) => {
-  await open(page, '1.2.0');
+  await open(page, NEXT_MINOR);
   await expect(page.locator('#basic-specs')).not.toHaveClass(/outdated/);
-  await expect(page.locator('#basic-specs')).toHaveAttribute('data-tip', /1\.2\.0 available/);
-  await open(page, '2.0.0');
+  await expect(page.locator('#basic-specs')).toHaveAttribute(
+    'data-tip', new RegExp(`${NEXT_MINOR.replaceAll('.', '\\.')} available`));
+  await open(page, NEXT_MAJOR);
   await expect(page.locator('#basic-specs')).toHaveClass(/outdated/);
-  await expect(page.locator('#basic-specs')).toHaveAttribute('data-tip', /2\.0\.0 available/);
+  await expect(page.locator('#basic-specs')).toHaveAttribute(
+    'data-tip', new RegExp(`${NEXT_MAJOR.replaceAll('.', '\\.')} available`));
 });
 
 test('[BASIC-VERSION-04] an unavailable latest version stays neutral', async ({ page }) => {
