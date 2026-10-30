@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T08:26",
+  "generatedAt": "2026-10-30T15:51",
   "workspace": "~/dev",
   "folders": [
     {
@@ -156,12 +156,12 @@
       "description": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
       "remote": true,
       "appVersion": "1.0.0",
-      "standard": "1.1.1",
+      "standard": "1.2.0",
       "profiles": [
         "web-static"
       ],
       "deviations": 0,
-      "lastCommit": "2026-10-27",
+      "lastCommit": "2026-10-30",
       "localOnly": false,
       "restored": true
     },
@@ -170,12 +170,12 @@
       "description": "This page: the public state of the workspace, generated from the folder tree.",
       "remote": true,
       "appVersion": "0.1.0",
-      "standard": "1.1.1",
+      "standard": "1.2.0",
       "profiles": [
         "web-static"
       ],
       "deviations": 1,
-      "lastCommit": "2026-10-29",
+      "lastCommit": "2026-10-30",
       "localOnly": false,
       "restored": true
     },
@@ -187,7 +187,7 @@
       "standard": null,
       "profiles": [],
       "deviations": 0,
-      "lastCommit": "2026-10-27",
+      "lastCommit": "2026-10-30",
       "localOnly": false,
       "restored": true
     },
@@ -256,7 +256,7 @@
         "quality-typescript"
       ],
       "deviations": 2,
-      "lastCommit": "2026-10-29",
+      "lastCommit": "2026-10-30",
       "localOnly": false,
       "restored": true
     },
