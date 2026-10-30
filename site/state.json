@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-29T22:19",
+  "generatedAt": "2026-10-30T08:26",
   "workspace": "~/dev",
   "folders": [
     {
@@ -17,9 +17,10 @@
         "four-wins",
         "startup-layout",
         "mycents",
-        "filmchen"
+        "filmchen",
+        "netzwache"
       ],
-      "count": 9
+      "count": 10
     },
     {
       "name": "mcps",
@@ -258,6 +259,18 @@
       "lastCommit": "2026-10-29",
       "localOnly": false,
       "restored": true
+    },
+    {
+      "name": "netzwache",
+      "description": "Watches the local network through the router: device inventory, findings, white and black lists.",
+      "remote": false,
+      "appVersion": null,
+      "standard": null,
+      "profiles": [],
+      "deviations": 0,
+      "lastCommit": "2026-10-30",
+      "localOnly": true,
+      "restored": false
     },
     {
       "name": "startup-layout",

@@ -49,7 +49,7 @@
     },
     "secrets": {
       "role": "one file per token",
-      "text": "Closed to the agent by configuration. Only its existence is named here, never its content \u2014 not even the file names.",
+      "text": "Closed to the agent by configuration. Only its existence is named here, never its content — not even the file names.",
       "public": false,
       "listing": "none"
     },
@@ -79,6 +79,10 @@
     },
     "four-wins": "Connect Four in Angular, live on GitHub Pages.",
     "startup-layout": "A GNOME Shell extension that builds the window layout at login.",
-    "mycents": "A local-first personal finance ledger for accounts, neutral transfers, recurring routines and yearly comparison."
+    "mycents": "A local-first personal finance ledger for accounts, neutral transfers, recurring routines and yearly comparison.",
+    "netzwache": {
+      "text": "Watches the local network through the router: device inventory, findings, white and black lists.",
+      "localOnly": true
+    }
   }
 }
