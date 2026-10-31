@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T15:57",
+  "generatedAt": "2026-10-31T17:47",
   "workspace": "~/dev",
   "folders": [
     {
@@ -16,11 +16,12 @@
         "die-wand",
         "four-wins",
         "startup-layout",
-        "mycents",
         "filmchen",
-        "netzwache"
+        "kammer",
+        "netzwache",
+        "taler"
       ],
-      "count": 10
+      "count": 11
     },
     {
       "name": "mcps",
@@ -67,9 +68,10 @@
       "entries": [
         "die-wand-tiles.json",
         "filmchen-stimmen.json",
+        "kammer.service",
         "startup-layout.json"
       ],
-      "count": 3
+      "count": 4
     },
     {
       "name": "bootstrap",
@@ -156,7 +158,7 @@
       "description": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
       "remote": true,
       "appVersion": "1.0.0",
-      "standard": "1.2.0",
+      "standard": "1.2.1",
       "profiles": [
         "web-static"
       ],
@@ -170,7 +172,7 @@
       "description": "This page: the public state of the workspace, generated from the folder tree.",
       "remote": true,
       "appVersion": "0.1.0",
-      "standard": "1.2.0",
+      "standard": "1.2.1",
       "profiles": [
         "web-static"
       ],
@@ -196,7 +198,7 @@
       "description": "Dated entries in SQLite, readable and searchable in the browser; an AI may only append.",
       "remote": true,
       "appVersion": "1.4.0",
-      "standard": "1.2.0",
+      "standard": "1.2.1",
       "profiles": [
         "web-server"
       ],
@@ -210,7 +212,7 @@
       "description": "A wall of bookmark tiles, static, no account, no cloud.",
       "remote": true,
       "appVersion": "0.5.0",
-      "standard": "1.2.0",
+      "standard": "1.2.1",
       "profiles": [
         "web-static"
       ],
@@ -236,7 +238,7 @@
       "description": "Connect Four in Angular, live on GitHub Pages.",
       "remote": true,
       "appVersion": "1.0.0",
-      "standard": "1.2.0",
+      "standard": "1.2.1",
       "profiles": [
         "web-static"
       ],
@@ -246,19 +248,19 @@
       "restored": true
     },
     {
-      "name": "mycents",
-      "description": "A local-first personal finance ledger for accounts, neutral transfers, recurring routines and yearly comparison.",
-      "remote": true,
-      "appVersion": "0.2.0",
-      "standard": "1.2.0",
+      "name": "kammer",
+      "description": "Bestandsaufnahme der Ordner auf Zorin und dem NAS, mit Klasse, Zweck, AI-Zugriff und einem gemessenen Schutz.",
+      "remote": false,
+      "appVersion": "1.0.0",
+      "standard": "1.2.1",
       "profiles": [
         "web-server",
-        "quality-typescript"
+        "quality-python"
       ],
-      "deviations": 2,
-      "lastCommit": "2026-10-30",
-      "localOnly": false,
-      "restored": true
+      "deviations": 1,
+      "lastCommit": "2026-10-31",
+      "localOnly": true,
+      "restored": false
     },
     {
       "name": "netzwache",
@@ -283,6 +285,21 @@
       "lastCommit": "2026-10-28",
       "localOnly": false,
       "restored": true
+    },
+    {
+      "name": "taler",
+      "description": "A household ledger with sealed records: six kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",
+      "remote": false,
+      "appVersion": "1.0.0",
+      "standard": "1.2.1",
+      "profiles": [
+        "web-server",
+        "quality-python"
+      ],
+      "deviations": 2,
+      "lastCommit": "2026-10-31",
+      "localOnly": true,
+      "restored": false
     }
   ],
   "drift": [],

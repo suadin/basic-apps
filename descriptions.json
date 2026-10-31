@@ -68,9 +68,9 @@
     }
   },
   "repos": {
+    "app-template": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
     "basic-apps": "This page: the public state of the workspace, generated from the folder tree.",
     "basic-specs": "The versioned standard: rules, profiles, checker, specimen and the public registry.",
-    "app-template": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
     "diary": "Dated entries in SQLite, readable and searchable in the browser; an AI may only append.",
     "die-wand": "A wall of bookmark tiles, static, no account, no cloud.",
     "filmchen": {
@@ -78,10 +78,17 @@
       "localOnly": true
     },
     "four-wins": "Connect Four in Angular, live on GitHub Pages.",
-    "startup-layout": "A GNOME Shell extension that builds the window layout at login.",
-    "mycents": "A local-first personal finance ledger for accounts, neutral transfers, recurring routines and yearly comparison.",
+    "kammer": {
+      "text": "Bestandsaufnahme der Ordner auf Zorin und dem NAS, mit Klasse, Zweck, AI-Zugriff und einem gemessenen Schutz.",
+      "localOnly": true
+    },
     "netzwache": {
       "text": "Watches the local network through the router: device inventory, findings, white and black lists.",
+      "localOnly": true
+    },
+    "startup-layout": "A GNOME Shell extension that builds the window layout at login.",
+    "taler": {
+      "text": "A household ledger with sealed records: six kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",
       "localOnly": true
     }
   }
