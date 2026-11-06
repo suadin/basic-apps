@@ -88,7 +88,7 @@
     },
     "startup-layout": "A GNOME Shell extension that builds the window layout at login.",
     "taler": {
-      "text": "A household ledger with sealed records: six kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",
+      "text": "A household ledger with sealed records: seven kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",
       "localOnly": true
     }
   }

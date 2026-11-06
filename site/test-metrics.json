@@ -2,10 +2,10 @@
   "unit": {
     "tests": 15,
     "failures": 0,
-    "coverage": 80.53,
-    "measuredAt": "2026-10-29T11:57",
-    "durationSeconds": 0.065,
-    "perTest": 0.0044
+    "coverage": 79.08,
+    "measuredAt": "2026-11-06T23:09",
+    "durationSeconds": 0.081,
+    "perTest": 0.0054
   },
   "e2e": {
     "tests": 19,
@@ -13,8 +13,8 @@
     "coverage": 56.53,
     "coveredLines": 342,
     "totalLines": 605,
-    "measuredAt": "2026-10-29T11:57",
-    "durationSeconds": 3.258,
-    "perTest": 0.1715
+    "measuredAt": "2026-11-06T23:09",
+    "durationSeconds": 3.711,
+    "perTest": 0.1953
   }
 }

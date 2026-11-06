@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T17:47",
+  "generatedAt": "2026-11-06T23:09",
   "workspace": "~/dev",
   "folders": [
     {
@@ -177,7 +177,7 @@
         "web-static"
       ],
       "deviations": 1,
-      "lastCommit": "2026-10-30",
+      "lastCommit": "2026-10-31",
       "localOnly": false,
       "restored": true
     },
@@ -288,16 +288,16 @@
     },
     {
       "name": "taler",
-      "description": "A household ledger with sealed records: six kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",
+      "description": "A household ledger with sealed records: seven kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",
       "remote": false,
-      "appVersion": "1.0.0",
+      "appVersion": "1.1.0",
       "standard": "1.2.1",
       "profiles": [
         "web-server",
         "quality-python"
       ],
       "deviations": 2,
-      "lastCommit": "2026-10-31",
+      "lastCommit": "2026-11-06",
       "localOnly": true,
       "restored": false
     }
