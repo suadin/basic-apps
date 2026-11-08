@@ -68,7 +68,6 @@
     }
   },
   "repos": {
-    "app-template": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
     "basic-apps": "This page: the public state of the workspace, generated from the folder tree.",
     "basic-specs": "The versioned standard: rules, profiles, checker, specimen and the public registry.",
     "diary": "Dated entries in SQLite, readable and searchable in the browser; an AI may only append.",

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T13:12",
+  "generatedAt": "2026-11-08T13:17",
   "workspace": "~/dev",
   "folders": [
     {
@@ -9,7 +9,6 @@
       "public": true,
       "detailed": true,
       "entries": [
-        "app-template",
         "basic-apps",
         "basic-specs",
         "diary",
@@ -22,7 +21,7 @@
         "netzwache",
         "taler"
       ],
-      "count": 12
+      "count": 11
     },
     {
       "name": "mcps",
@@ -155,20 +154,6 @@
   ],
   "repos": [
     {
-      "name": "app-template",
-      "description": "The vanilla static starter with Lorem Ipsum, tests and a green check.",
-      "remote": true,
-      "appVersion": "1.0.0",
-      "standard": "1.2.1",
-      "profiles": [
-        "web-static"
-      ],
-      "deviations": 0,
-      "lastCommit": "2026-10-30",
-      "localOnly": false,
-      "restored": true
-    },
-    {
       "name": "basic-apps",
       "description": "This page: the public state of the workspace, generated from the folder tree.",
       "remote": true,
@@ -178,7 +163,7 @@
         "web-static"
       ],
       "deviations": 1,
-      "lastCommit": "2026-11-06",
+      "lastCommit": "2026-11-08",
       "localOnly": false,
       "restored": true
     },
