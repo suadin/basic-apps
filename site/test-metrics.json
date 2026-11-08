@@ -1,20 +1,20 @@
 {
   "unit": {
-    "tests": 15,
+    "tests": 5,
     "failures": 0,
-    "coverage": 79.08,
-    "measuredAt": "2026-11-06T23:09",
-    "durationSeconds": 0.081,
-    "perTest": 0.0054
+    "coverage": 95.74,
+    "measuredAt": "2026-11-08T13:15",
+    "durationSeconds": 0.078,
+    "perTest": 0.0156
   },
   "e2e": {
-    "tests": 19,
+    "tests": 3,
     "failures": 0,
-    "coverage": 56.53,
-    "coveredLines": 342,
-    "totalLines": 605,
-    "measuredAt": "2026-11-06T23:09",
-    "durationSeconds": 3.711,
-    "perTest": 0.1953
+    "coverage": 93.43,
+    "coveredLines": 128,
+    "totalLines": 137,
+    "measuredAt": "2026-11-08T13:15",
+    "durationSeconds": 0.737,
+    "perTest": 0.2457
   }
 }

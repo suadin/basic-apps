@@ -86,6 +86,7 @@
       "text": "Watches the local network through the router: device inventory, findings, white and black lists.",
       "localOnly": true
     },
+    "norm": "The Norm: design tokens, footer, documentation reader and conformance checks as a package.",
     "startup-layout": "A GNOME Shell extension that builds the window layout at login.",
     "taler": {
       "text": "A household ledger with sealed records: seven kinds of account, postings, neutral transfers, one CSV format and an API for scripts.",

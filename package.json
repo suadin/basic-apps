@@ -8,16 +8,16 @@
     "start": "python3 -m http.server 4173 --directory site",
     "scan": "python3 tools/scan.py",
     "check:state": "python3 tools/scan.py --check",
-    "test": "node --test --experimental-test-coverage --test-coverage-include='site/logic.js' --test-coverage-include='site/reader.js' --test-coverage-include='site/version.js' test/*.test.js && pnpm test:scan",
+    "test": "node --test --experimental-test-coverage --test-coverage-include='site/logic.js' test/*.test.js && pnpm test:scan",
     "test:scan": "python3 -m unittest discover -s test -p 'test_*.py' -t .",
     "test:e2e": "pnpm publish-site && playwright test --config e2e/playwright.config.js",
-    "metrics": "pnpm publish-site && node scripts/metrics.mjs",
+    "metrics": "pnpm norm metrics",
     "check:docs": "node check-docs.mjs",
-    "basics": "python3 basics/check.py --root .",
-    "check": "pnpm basics check --run && pnpm metrics && pnpm check:docs && pnpm check:state",
+    "check": "pnpm norm check && pnpm metrics && pnpm check:docs && pnpm check:state",
     "publish-site": "./publish.sh"
   },
   "devDependencies": {
-    "@playwright/test": "1.64.1"
+    "@playwright/test": "1.64.1",
+    "@suadin/norm": "file:../norm"
   }
 }

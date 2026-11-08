@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T23:09",
+  "generatedAt": "2026-11-08T13:12",
   "workspace": "~/dev",
   "folders": [
     {
@@ -15,13 +15,14 @@
         "diary",
         "die-wand",
         "four-wins",
+        "norm",
         "startup-layout",
         "filmchen",
         "kammer",
         "netzwache",
         "taler"
       ],
-      "count": 11
+      "count": 12
     },
     {
       "name": "mcps",
@@ -172,12 +173,12 @@
       "description": "This page: the public state of the workspace, generated from the folder tree.",
       "remote": true,
       "appVersion": "0.1.0",
-      "standard": "1.2.1",
+      "standard": "2.0.0",
       "profiles": [
         "web-static"
       ],
       "deviations": 1,
-      "lastCommit": "2026-10-31",
+      "lastCommit": "2026-11-06",
       "localOnly": false,
       "restored": true
     },
@@ -273,6 +274,18 @@
       "lastCommit": "2026-10-30",
       "localOnly": true,
       "restored": false
+    },
+    {
+      "name": "norm",
+      "description": "The Norm: design tokens, footer, documentation reader and conformance checks as a package.",
+      "remote": true,
+      "appVersion": null,
+      "standard": null,
+      "profiles": [],
+      "deviations": 0,
+      "lastCommit": "2026-11-08",
+      "localOnly": false,
+      "restored": true
     },
     {
       "name": "startup-layout",

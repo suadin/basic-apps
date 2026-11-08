@@ -1,0 +1,37 @@
+{
+  "name": "basic-apps",
+  "appVersion": "0.1.0",
+  "vendorDir": "site",
+  "source": "https://github.com/suadin/basic-apps",
+  "profiles": [
+    "web-static"
+  ],
+  "docs": {
+    "appSpecs": "docs/APP-SPECS.md",
+    "releaseNotes": "RELEASE-NOTES.md"
+  },
+  "runtime": "site/norm/app.json",
+  "metrics": "site/test-metrics.json",
+  "coverage": {
+    "unit": {
+      "include": ["site/logic.js"],
+      "testFiles": ["test/state.test.js"]
+    },
+    "e2e": {
+      "baseURL": "http://127.0.0.1:4173",
+      "files": ["app.js", "logic.js"]
+    }
+  },
+  "commands": {
+    "unit": "pnpm test",
+    "e2e": "pnpm test:e2e",
+    "metrics": "pnpm norm metrics"
+  },
+  "allow": [
+    {
+      "rule": "NORM-DATA-01",
+      "reason": "The page publishes the folder inventory of this machine on purpose: folder and project names are real, not sample data. A scanner in tools/scan.py refuses to write the document if it would contain an address, a volume path, a key or a token, and secrets/ and backups/ appear only as existence, without even their file names.",
+      "review": "2027-01-29"
+    }
+  ]
+}
