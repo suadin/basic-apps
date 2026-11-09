@@ -1,15 +1,15 @@
 :root {
   color-scheme: light dark;
-  --paper: #f5f0e5;
-  --card: #fffaf0;
-  --ink: #191919;
-  --muted: #68645d;
-  --hover: #fff2c9;
-  --danger: #8e1e15;
-  --yellow: #ffd45c;
-  --red: #e84c3d;
-  --green: #588b55;
-  --purple: #b18cff;
+  --paper: #fff6e5;
+  --card: #ffffff;
+  --ink: #1b1a1f;
+  --muted: #6f6a60;
+  --hover: #fff0c2;
+  --danger: #a33a2b;
+  --yellow: #ffc93c;
+  --red: #ff6b5a;
+  --green: #4f9a5a;
+  --purple: #a98bff;
   --font: "Comic Sans MS", "Trebuchet MS", sans-serif;
   --code: ui-monospace, monospace;
   --line: 2px solid var(--ink);
@@ -20,16 +20,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --paper: #201f25;
-    --card: #2a2931;
-    --ink: #f3eee3;
-    --muted: #c0bac2;
-    --hover: #38343a;
+    --paper: #2b2436;
+    --card: #3a3147;
+    --ink: #f4eede;
+    --muted: #c4bdd0;
+    --hover: #453a55;
     --danger: #ff9389;
-    --yellow: #a88835;
+    --yellow: #ffd45c;
     --red: #ff786e;
-    --green: #a8d49a;
-    --purple: #7d5fc7;
+    --green: #8fd29a;
+    --purple: #b79cff;
   }
 }
 
@@ -200,6 +200,15 @@ a { color: var(--green); }
 .reader-body table { width: 100%; border-collapse: collapse; }
 .reader-body th, .reader-body td { padding: 0.4rem; border-bottom: 1px solid var(--muted); text-align: left; }
 
+/* NORM-READER-02: the automated test list below the body, separated by the dashed rule. */
+.doc-tests { margin-top: 1.4rem; padding-top: 0.9rem; border-top: 0.125rem dashed var(--muted); }
+.doc-tests h4 { margin: 0 0 0.3rem; }
+.doc-test-group { margin-top: 0.6rem; }
+.doc-test-kind { display: block; color: var(--green); font-size: 0.74em; font-weight: 900; }
+.doc-test-group ol { margin: 0.1rem 0 0; padding-left: 1.4rem; font-size: 0.8em; line-height: 1.5; }
+.doc-test-group li { margin: 0; overflow-wrap: anywhere; }
+.doc-test-group li::marker { color: var(--green); font-weight: 900; }
+
 .tooltip {
   position: fixed;
   z-index: 50;
@@ -215,6 +224,7 @@ a { color: var(--green); }
   pointer-events: none;
 }
 .tooltip[data-wide] { max-width: 36rem; }
+.tooltip[data-below]::after { bottom: auto; top: -0.3rem; }
 .tooltip::after {
   content: "";
   position: absolute;

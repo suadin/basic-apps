@@ -8,7 +8,10 @@ import { appVersionTip, metricLabel, normVersionTip, tipFor } from './metrics.js
 
 export function sourceLabel(url) {
   if (!url) return '';
-  return String(url).replace(/^https?:\/\//, '').replace(/\/+$/, '');
+  return String(url)
+    .replace(/^https?:\/\//, '')
+    .replace(/^github\.com\//, '')
+    .replace(/\/+$/, '');
 }
 
 export function footerHtml({ app, source, normVersion }) {
