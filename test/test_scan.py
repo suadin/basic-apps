@@ -121,6 +121,18 @@ class ScanTest(unittest.TestCase):
         self.assertFalse(rows["alpha"]["remote"])
         self.assertIsNone(rows["alpha"]["lastCommit"])
 
+    def test_a_norm_manifest_reads_the_version_from_the_vendored_artifact(self):
+        self.write("repos/alpha/norm.json", json.dumps({
+            "appVersion": "2.0.0",
+            "vendorDir": "site",
+            "allow": [{"rule": "NORM-DATA-01", "reason": "x", "review": "2099-01-01"}],
+        }))
+        self.write("repos/alpha/site/norm/version.json", json.dumps({"version": "2.1.0"}))
+        rows = {row["name"]: row for row in self.run_scan()["repos"]}
+        self.assertEqual(rows["alpha"]["standard"], "2.1.0")
+        self.assertEqual(rows["alpha"]["appVersion"], "2.0.0")
+        self.assertEqual(rows["alpha"]["deviations"], 1)
+
     def test_root_files_are_named_not_read(self):
         state = self.run_scan()
         self.assertEqual([item["name"] for item in state["files"]], ["AGENTS.md"])

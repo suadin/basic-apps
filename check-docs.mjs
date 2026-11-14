@@ -9,7 +9,6 @@ const sources = [
   'README.md',
   'RELEASE-NOTES.md',
   'docs/APP-SPECS.md',
-  'docs/BASIC-SPECS.md',
 ];
 const errors = [];
 for (const source of sources) {

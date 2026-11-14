@@ -78,12 +78,27 @@ def git(root: Path, *args: str) -> str | None:
 
 def repo_facts(path: Path, description: str | None) -> dict:
     manifest: dict = {}
-    basics = path / "basics.json"
-    if basics.is_file():
-        try:
-            manifest = json.loads(basics.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            manifest = {}
+    kind = None
+    for name in ("norm.json", "basics.json"):
+        candidate = path / name
+        if candidate.is_file():
+            try:
+                manifest = json.loads(candidate.read_text(encoding="utf-8"))
+            except json.JSONDecodeError:
+                manifest = {}
+            kind = name
+            break
+
+    standard = manifest.get("standard")
+    if kind == "norm.json":
+        version_file = path / manifest.get("vendorDir", "site") / "norm" / "version.json"
+        if version_file.is_file():
+            try:
+                standard = json.loads(version_file.read_text(encoding="utf-8")).get("version")
+            except json.JSONDecodeError:
+                standard = None
+
+    deviations = len(manifest.get("allow", manifest.get("deviations", [])))
     origin = git(path, "remote", "get-url", "origin")
     owner = "github.com/suadin/" if origin and "github.com/suadin/" in origin else None
     return {
@@ -91,9 +106,9 @@ def repo_facts(path: Path, description: str | None) -> dict:
         "description": description,
         "remote": bool(owner),
         "appVersion": manifest.get("appVersion"),
-        "standard": manifest.get("standard"),
+        "standard": standard,
         "profiles": manifest.get("profiles", []),
-        "deviations": len(manifest.get("deviations", [])),
+        "deviations": deviations,
         "lastCommit": git(path, "log", "-1", "--format=%cs"),
     }
 
